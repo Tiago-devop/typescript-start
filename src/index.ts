@@ -40,14 +40,6 @@ const rateQuestions = [
   },
 ];
 
-/*
-    * Adicionar menu:
-
-    Baixar filmes (Implementado)
-    Logar usuário (Escolher por id)
-    Dar avaliação (Escolher um filme e avaliacao)
-    Listar filmes com média (usar o calculateMoviesWith Average)
-*/
 let movies: Movie[];
 let loggedUserId;
 
@@ -95,6 +87,7 @@ async function run() {
 
       run();
       break;
+
     case MenuOptions.SHOW_WITH_AVERAGE:
       const moviesWithAverage = calculateMoviesAverage(movies);
       moviesWithAverage.map((movie) =>
@@ -102,6 +95,7 @@ async function run() {
       );
       run();
       break;
+
     case MenuOptions.ADD_TO_LIST:
       const addToListQuestion = [
         {
@@ -118,6 +112,7 @@ async function run() {
       users[loggedUserId] = addFilms(users[loggedUserId], movies, ...ids);
       console.log(users[loggedUserId]);
       break;
+
     case MenuOptions.EXIT:
       break;
   }
